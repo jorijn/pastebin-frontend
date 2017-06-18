@@ -19,3 +19,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# phpstorm / webstorm
+.idea/workspace.xml
+.idea/tasks.xml

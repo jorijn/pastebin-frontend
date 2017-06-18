@@ -1,0 +1,32 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": [2, "never"],
+    "generator-star-spacing": 1,
+    "new-cap": 1,
+    "object-shorthand": 1,
+    "no-await-in-loop": 1,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2
+  },
+  "globals": {
+    "it": false
+  },
+  "plugins": [
+    "babel",
+    "react"
+  ]
+}
