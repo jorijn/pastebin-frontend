@@ -1,14 +1,21 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+
+// application styling
+import "semantic-ui-css/semantic.min.css";
 
 // local imports
-import App from "./App";
+import Root from "./components/Root";
 import registerServiceWorker from "./registerServiceWorker";
-import "./index.css";
+import store from "./store";
 
 // render the app to the root node
-render(<App />, document.getElementById("root"));
+render(
+  <BrowserRouter><Root store={store} /></BrowserRouter>,
+  document.getElementById("root")
+);
 
 // register the react service worker
 registerServiceWorker();

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+.CodeComposer {
+    border: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    font-family: 'Inconsolata', monospace;
+    min-height: 500px;
+}
+
+.CodeComposer:focus {
+    outline: 0;
+}

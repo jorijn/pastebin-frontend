@@ -1,0 +1,7 @@
+.ui.grid.ComposeView {
+    padding: 2rem 0;
+}
+
+.ui.grid.ComposeView .ui.piled.segment {
+    flex: 1;
+}
