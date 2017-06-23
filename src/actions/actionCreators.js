@@ -1,8 +1,8 @@
-export function postPaste(language, retention, content) {
+export function postPaste(retention, language, content) {
   return {
     type: "PASTE_POST_REQUESTED",
-    language,
     retention,
+    language,
     content
   };
 }

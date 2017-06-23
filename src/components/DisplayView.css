@@ -1,0 +1,12 @@
+pre {
+    background: #FFF !important;
+    font-family: 'Inconsolata', monospace !important;
+}
+
+code {
+    font-family: 'Inconsolata', monospace !important;
+}
+
+.ui.grid.DisplayView {
+    padding: 2rem 0;
+}
