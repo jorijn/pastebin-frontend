@@ -2,6 +2,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import Raven from "raven-js";
 
 // application styling
 import "semantic-ui-css/semantic.min.css";
@@ -10,6 +11,12 @@ import "semantic-ui-css/semantic.min.css";
 import Root from "./components/Root";
 import registerServiceWorker from "./registerServiceWorker";
 import store from "./store";
+
+// register error handling
+const sentryDsn = process.env.SENTRY_PUBLIC_DSN || false;
+if (sentryDsn) {
+  Raven.config(sentryDsn).install();
+}
 
 // render the app to the root node
 render(
