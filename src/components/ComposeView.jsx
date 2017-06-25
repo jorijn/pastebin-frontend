@@ -21,9 +21,11 @@ class ComposeView extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.paste.id) {
-      this.props.history.push(`/${nextProps.paste.id}`);
+    if (nextProps.paste.hash) {
+      this.props.history.push(`/${nextProps.paste.hash}`);
     }
+
+    this.setState({ loading: false });
   }
 
   submitPaste(retention, language) {
@@ -59,12 +61,20 @@ ComposeView.propTypes = {
   postPaste: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
-  }).isRequired
-  // paste: PropTypes.shape({
-  //   content: PropTypes.string.isRequired,
-  //   id: PropTypes.string.isRequired,
-  //   language: PropTypes.string.isRequired
-  // })
+  }).isRequired,
+  paste: PropTypes.shape({
+    content: PropTypes.string,
+    hash: PropTypes.string,
+    language: PropTypes.string
+  })
+};
+
+ComposeView.defaultProps = {
+  paste: {
+    content: null,
+    hash: null,
+    language: null
+  }
 };
 
 export default connectStore(ComposeView);

@@ -13,7 +13,7 @@ import registerServiceWorker from "./registerServiceWorker";
 import store from "./store";
 
 // register error handling
-const sentryDsn = process.env.SENTRY_PUBLIC_DSN || false;
+const sentryDsn = process.env.REACT_APP_SENTRY_PUBLIC_DSN || false;
 if (sentryDsn) {
   Raven.config(sentryDsn).install();
 }

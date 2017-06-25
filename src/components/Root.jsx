@@ -12,7 +12,7 @@ const Root = ({ store }) => (
     <div>
       <Switch>
         <Route path="/" exact component={ComposeView} />
-        <Route path="/:pasteId" component={DisplayView} />
+        <Route path="/:hash" component={DisplayView} />
       </Switch>
       <NetlifyBadge />
     </div>

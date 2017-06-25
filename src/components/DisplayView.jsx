@@ -11,6 +11,42 @@ class DisplayView extends React.Component {
     super();
 
     this.state = { loading: false };
+
+    this.setLoading = this.setLoading.bind(this);
+    this.renderHighlighter = this.renderHighlighter.bind(this);
+  }
+
+  componentDidMount() {
+    if (!this.props.paste.hash) {
+      this.setLoading(true);
+      this.props.getPaste(this.props.match.params.hash);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.paste.hash) {
+      this.setLoading(false);
+    }
+  }
+
+  setLoading(truth) {
+    this.setState({ loading: truth });
+  }
+
+  renderHighlighter() {
+    if (this.props.paste.hash) {
+      return (
+        <SyntaxHighlighter
+          showLineNumbers
+          language={this.props.paste.language}
+          style={github}
+        >
+          {this.props.paste.content}
+        </SyntaxHighlighter>
+      );
+    } else {
+      return <span />;
+    }
   }
 
   render() {
@@ -19,13 +55,7 @@ class DisplayView extends React.Component {
         <Grid.Row>
           <Grid.Column>
             <Segment piled loading={this.state.loading}>
-              <SyntaxHighlighter
-                showLineNumbers
-                language={this.props.paste.language}
-                style={github}
-              >
-                {this.props.paste.content}
-              </SyntaxHighlighter>
+              {this.renderHighlighter()}
             </Segment>
           </Grid.Column>
         </Grid.Row>

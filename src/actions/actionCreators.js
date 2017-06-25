@@ -7,9 +7,9 @@ export function postPaste(retention, language, content) {
   };
 }
 
-export function getPaste(pasteId) {
+export function getPaste(hash) {
   return {
     type: "PASTE_GET_REQUESTED",
-    pasteId
+    hash
   };
 }

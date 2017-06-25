@@ -10,3 +10,7 @@ code {
 .ui.grid.DisplayView {
     padding: 2rem 0;
 }
+
+.ui.piled.segment {
+    min-height: 150px;
+}
