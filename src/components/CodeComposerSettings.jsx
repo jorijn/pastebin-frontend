@@ -22,7 +22,7 @@ export default class CodeComposerSettings extends React.Component {
   constructor() {
     super();
 
-    this.state = { language: "plaintext", retention: 0 };
+    this.state = { language: "javascript", retention: 0 };
   }
 
   render() {
