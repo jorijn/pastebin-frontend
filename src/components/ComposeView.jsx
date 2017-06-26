@@ -37,7 +37,7 @@ class ComposeView extends React.Component {
   render() {
     return (
       <Grid className="ComposeView" container stretched centered>
-        <Grid.Row>
+        <Grid.Row className="ComposeRow">
           <Grid.Column>
             <Segment piled loading={this.state.loading}>
               <textarea
@@ -47,7 +47,7 @@ class ComposeView extends React.Component {
             </Segment>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
+        <Grid.Row className="SettingsRow">
           <Grid.Column>
             <CodeComposerSettings submitPaste={this.submitPaste} />
           </Grid.Column>

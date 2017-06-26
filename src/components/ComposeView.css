@@ -2,6 +2,16 @@
 
 .ui.grid.ComposeView {
     padding: 2rem 0;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.ui.grid.ComposeView .ComposeRow {
+    flex-grow: 1;
+}
+
+.ui.grid.ComposeView .SettingsRow {
+    flex-grow: 0;
 }
 
 .ui.grid.ComposeView .ui.piled.segment {
@@ -16,7 +26,6 @@
     box-sizing: border-box;
     resize: none;
     font-family: 'Inconsolata', monospace;
-    min-height: 500px;
 }
 
 .ui.grid.ComposeView .CodeComposer:focus {
