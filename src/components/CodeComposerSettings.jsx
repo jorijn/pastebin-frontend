@@ -39,6 +39,7 @@ export default class CodeComposerSettings extends React.Component {
                 fluid
                 search
                 selection
+                upward
                 options={CodeComposerSettings.dataRetentionOptions}
                 value={this.state.retention}
                 onChange={(ev, data) => {
@@ -55,6 +56,7 @@ export default class CodeComposerSettings extends React.Component {
                 fluid
                 search
                 selection
+                upward
                 options={CodeComposerSettings.getLanguagesForDropdown()}
                 value={this.state.language}
                 onChange={(ev, data) => {
