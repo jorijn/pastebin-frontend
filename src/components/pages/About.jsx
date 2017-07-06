@@ -57,7 +57,9 @@ const About = ({ history }) => (
           https://github.com/jorijn/pastebin-backend
         </a>
       </p>
-      <p>Thanks!</p>
+      <p>
+        Feel free to contribute to the source code to make sure this thing kicks ass even more. Thanks!
+      </p>
       <p>
         <Image src={signature} className="signature" size="medium" />
       </p>
