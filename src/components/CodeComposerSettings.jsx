@@ -10,7 +10,7 @@ export default class CodeComposerSettings extends React.Component {
     { key: 60, value: 60, text: "1 hour" },
     { key: 1440, value: 1440, text: "1 day" },
     { key: 10080, value: 10080, text: "1 week" },
-    { key: 0, value: 0, text: "Forever" }
+    { key: 0, value: 0, text: "forever" }
   ];
 
   static getLanguagesForDropdown() {
