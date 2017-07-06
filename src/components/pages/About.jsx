@@ -18,7 +18,10 @@ const About = ({ history }) => (
       </p>
       <Header as="h3">Why another Pastebin?</Header>
       <p>
-        During my journey on learning React, I wanted to create a real life application to try
+        During my journey on learning React (thanks,
+        {" "}
+        <a href="https://reactforbeginners.com/">Wes Bos</a>
+        !), I wanted to create a real life application to try
         some popular technologies. The idea was born, my goal would to be to create worlds most
         overkill application to host code snippets. Although the application itself does not
         contain many features, you are looking at:
