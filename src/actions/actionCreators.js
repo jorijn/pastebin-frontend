@@ -13,3 +13,10 @@ export function getPaste(hash) {
     hash
   };
 }
+
+export function dismissAlert(index) {
+  return {
+    type: "DISMISS_ALERT",
+    index
+  };
+}

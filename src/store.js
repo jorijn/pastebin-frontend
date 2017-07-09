@@ -8,7 +8,10 @@ import pastePostSaga from "./sagas/paste";
 
 const sagaMiddleware = createSagaMiddleware();
 export const history = createHistory();
-const defaultState = { paste: { language: null, content: null, hash: null } };
+const defaultState = {
+  alerts: [],
+  paste: { language: null, content: null, hash: null }
+};
 const middlewareForRedux = [sagaMiddleware, routerMiddleware(history)];
 
 const store = createStore(

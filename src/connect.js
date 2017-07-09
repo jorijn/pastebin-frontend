@@ -4,7 +4,8 @@ import * as actionCreators from "./actions/actionCreators";
 
 export function mapStateToProps(state) {
   return {
-    paste: state.paste
+    paste: state.paste,
+    alerts: state.alerts
   };
 }
 

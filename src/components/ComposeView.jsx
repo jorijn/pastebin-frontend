@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Segment } from "semantic-ui-react";
+import { Grid, Segment, Message } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import connectStore from "../connect";
 import CodeComposerSettings from "./CodeComposerSettings";
@@ -14,6 +14,10 @@ class ComposeView extends React.Component {
     };
 
     this.submitPaste = this.submitPaste.bind(this);
+    this.renderResponseMessages = this.renderResponseMessages.bind(this);
+    this.handleDismissOfResponseMessage = this.handleDismissOfResponseMessage.bind(
+      this
+    );
   }
 
   componentDidMount() {
@@ -34,9 +38,37 @@ class ComposeView extends React.Component {
     this.setState({ loading: true });
   }
 
+  handleDismissOfResponseMessage(ev, message) {
+    this.props.dismissAlert(message.id);
+  }
+
+  renderResponseMessages() {
+    if (this.props.alerts.length === 0) {
+      return null;
+    }
+
+    return (
+      <Grid.Row className="ResponseMessages">
+        <Grid.Column>
+          {this.props.alerts.map((alert, idx) => (
+            <Message
+              key={idx}
+              id={idx}
+              error
+              header={alert.title}
+              onDismiss={this.handleDismissOfResponseMessage}
+              list={alert.reasons || undefined}
+            />
+          ))}
+        </Grid.Column>
+      </Grid.Row>
+    );
+  }
+
   render() {
     return (
       <Grid className="ComposeView" container stretched centered>
+        {this.renderResponseMessages()}
         <Grid.Row className="ComposeRow">
           <Grid.Column>
             <Segment piled loading={this.state.loading}>

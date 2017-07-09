@@ -13,9 +13,20 @@ function* postPaste(action) {
     if (response.status === 200) {
       const { data: paste } = response;
       yield put({ type: "PASTE_POST_SUCCEEDED", paste });
+    } else {
+      throw new Error(
+        `Post failed with status code ${response.status} (${response.statusText})`
+      );
     }
   } catch (e) {
-    yield put({ type: "PASTE_POST_FAILED", message: e.message });
+    const reasons = e.response.data && e.response.status === 422
+      ? Object.keys(e.response.data).reduce(
+          (messages, key) => messages.concat(e.response.data[key]),
+          []
+        )
+      : [];
+
+    yield put({ type: "PASTE_POST_FAILED", message: e.message, reasons });
   }
 }
 
@@ -26,9 +37,17 @@ function* getPaste(action) {
     if (response.status === 200) {
       const { data: paste } = response;
       yield put({ type: "PASTE_GET_SUCCEEDED", paste });
+    } else {
+      throw new Error(
+        `Request failed with status code ${response.status} (${response.statusText})`
+      );
     }
   } catch (e) {
-    yield put({ type: "PASTE_GET_FAILED", message: e.message });
+    yield put({
+      type: "PASTE_GET_FAILED",
+      message: e.message,
+      hash: action.hash
+    });
   }
 }
 
