@@ -20,7 +20,9 @@ if (sentryDsn) {
 
 // render the app to the root node
 render(
-  <BrowserRouter><Root store={store} /></BrowserRouter>,
+  <BrowserRouter>
+    <Root store={store} />
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
