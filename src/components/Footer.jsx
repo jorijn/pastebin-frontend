@@ -52,6 +52,9 @@ export default class Footer extends React.Component {
             <Menu.Item as="a" href="https://www.netlify.com/" link>
               Deploys by Netlify
             </Menu.Item>
+            <Menu.Item as="a" href="https://jorijn.com/" link>
+              Created by @jorijn
+            </Menu.Item>
           </Menu.Menu>
         </Menu>
       </Container>
